@@ -49,11 +49,13 @@ table {
 
 /* aici incepe codul propriu-zis, ce e inainte e un reset */
 
+/*
 @font-face
 {
     font-family: Sagona;
     src: url('./fonts/SAGONABOOK.TTF');
 }
+*/
 #desc
 {
     font-size: 24px;
@@ -87,6 +89,10 @@ html *
     --sub_posy: 20%;
     --sub_posx: 20%;
     --sub_posz: 4;
+    --bg-col: #232435;
+    --ground1-col: #1b1c2d;
+    --ground2-col: #0b0c1d;
+    --outline: #A3A7FF;
 }
 
 #second_sub
@@ -247,9 +253,10 @@ header
 {
     display: flex;
     align-items: center;
-    background: #08003b;
+    background: var(--ground2-col);
     padding: 5px;
     z-index: 100;
+    outline: 1px solid var(--outline);
 }
 
 main
@@ -267,7 +274,7 @@ footer
     margin-top: auto;
     font-size: 16px;
     color: white;
-    background-color: #08003b;
+    background-color: var(--ground2-col);
     padding: 10px;
     z-index: 1;
 }
@@ -275,7 +282,7 @@ footer
 body {
     display: flex;
     flex-direction: column;
-    background: #130560;
+    background: var(--bg-col);
     overflow-x: hidden;
     max-width: 100%;
     }
@@ -321,7 +328,7 @@ body {
       display: inline-flex;
       align-items: center;
       font-size: 32px;
-      background-color: #08003b;
+      background-color: var(--ground1);
       color: white;
       border: 0px none;
     }
@@ -331,7 +338,7 @@ body {
       align-items: center;
       display: inline-block;
       position: absolute;
-      background-color: #08003b;
+      background-color: var(--ground1);
       z-index: 1;
       transition: all 0.5s;
       max-width: 0;
@@ -358,14 +365,14 @@ body {
         left: 0%;
         width: 100%;
         height: 25%;
-        background: #08003b;
+        background: var(--ground2-col);
         margin-top: 20px;
     }
 
     .ground1 {
         top: 55%;
         height: 50%;
-        background: #0c0051;
+        background: var(--ground1-col);
     }
 
     .ground2 {
@@ -373,7 +380,7 @@ body {
         top: 15%;
         width: 100%;
         height: 50%;
-        background: #08003b;
+        background: var(--ground2-col);
     }
 
     .ground span {
@@ -384,11 +391,11 @@ body {
     }
 
     .ground1 span {
-        background: #0c0051;
+        background: var(--ground1-col);
     }
 
     .ground2 span {
-        background: #08003b;
+        background: var(--ground2-col);
         width: 80px;
         height: 80px;
         border-radius: 100%;
@@ -398,12 +405,12 @@ body {
 
 .seaContainer {
     display:flex;
-	  padding: 0;
-	  top: 0%;
-	  left: 0%;
-	  width: 100%;
+	padding: 0;
+	top: 0%;
+	left: 0%;
+	width: 100%;
     min-height: 100%;
-	  background: #130560;
+	background: var(--bg-col);
     overflow-x: hidden; 
 }
 
@@ -444,20 +451,22 @@ body {
     {
         display: none;
     }
+
     .ground__container {
         position: relative;
         top:90%;
         left: 0%;
         width: 100%;
-        background: #08003b;
+        background: var(--ground1-col);
         margin-top: 10px;
     }
+
     .ground1 {
         position: absolute;
         top: -30px;
         height: 30px;
         width: 100%;
-        background: #0c0051;
+        background: var(--ground1-col);
     }
 
     .ground2 {
@@ -465,7 +474,7 @@ body {
         top: -10px;
         height: 120px;
         width: 100%;
-        background: #08003b;
+        background: var(--ground2-col);
     }
 
     .ground span {
@@ -476,11 +485,11 @@ body {
     }
 
     .ground1 span {
-        background: #0c0051;
+        background: var(--ground1-col);
     }
 
     .ground2 span {
-        background: #08003b;
+        background: var(--ground2-col);
         width: 80px;
         height: 80px;
         border-radius: 100%;
@@ -559,7 +568,7 @@ body {
     	width: calc(90px * var(--sub_size));
     	height: calc(50px * var(--sub_size));
     	transform: translate(-50%, -100%);
-    	background:var(--sub_second);
+    	background: var(--sub_second);
     	clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
 }
 
@@ -677,7 +686,7 @@ body {
     	left: 0%;
     	width: calc(500px * var(--sub_size));
     	height: calc(100px * var(--sub_size));
-    	background: linear-gradient(to left, #817E97, #130560);
+    	background: linear-gradient(to left, #817E97, var(--bg-col));
     	clip-path: polygon(0% 0%, 50% 45%, 50% 55%, 0% 100%);
     	transform: translate(-18%, -45%);
 }
