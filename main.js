@@ -1,7 +1,27 @@
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+// const crypto = require('crypto');
+ /*
+function encrypt(text) {
+    var cipher = crypto.createCipheriv('aes256', 'ivebeenworkingattheairportbaritslikeChristmasinasubmarine','yesidonotsleep');
+
+    var crypted = cipher.update(text, 'utf8', 'hex');
+    crypted += cipher.final('hex');
+
+    return crypted;
 }
 
+function decrypt(text)
+{
+    var decipher = crypto.createDecipheriv('aes256', 'ivebeenworkingattheairportbaritslikeChristmasinasubmarine','yesidonotsleep');
+
+    var decrypted = cipher.update(text, 'utf8', 'hex');
+    decrypted += decipher.final('hex');
+
+    return decrypted;
+}
+
+
+
+/*
 function login() {
     if (document.querySelector('.login-box')) {
         document.querySelector('.login-box').remove();
@@ -78,7 +98,7 @@ function login() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, encrypt(password) })
             })
                 .then(response => response.json())
                 .then(data => alert(data.message));
@@ -93,7 +113,7 @@ function login() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, encrypt(password) })
             })
                 .then(response => response.json())
                 .then(data => alert(data.message));
@@ -101,69 +121,63 @@ function login() {
     }
 
 }
+    */
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
-function moveSub(sub, link)
-{
+function moveSub(sub, link) {
   var move = false;
+  var isMiddleButtonDown = false;
+  var timeoutId = null;
 
   sub.addEventListener('click', function(event) {
     window.location.href = "blog" + link + ".html";
   }, true);
 
   sub.addEventListener('mousedown', function(event) {
-			if(event.which == 2)
-			{
-        setTimeout(function() {
-
-        event.stopPropagation();
-        event.preventDefault();
-                    move = true;
-        }, 500);
-			}
-}, true);
-
-    sub.addEventListener('mousemove', function(event) {
-      event.stopPropagation();
-      if(move == true)
-      {
-        event = event || window.event; // IE-ism
-
-        // If pageX/Y aren't available and clientX/Y are,
-        // calculate pageX/Y - logic taken from jQuery.
-        // (This is to support old IE)
-        if (event.pageX == null && event.clientX != null) {
-            eventDoc = (event.target && event.target.ownerDocument) || document;
-            doc = eventDoc.documentElement;
-            body = eventDoc.body;
-
-            event.pageX = event.clientX +
-              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-              (doc && doc.clientLeft || body && body.clientLeft || 0);
-            event.pageY = event.clientY +
-              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+    if (event.which === 2) {
+      isMiddleButtonDown = true;
+      timeoutId = setTimeout(function() {
+        if (isMiddleButtonDown) {
+          move = true;
         }
-
-        sub.style.top = event.pageY + "px";
-        sub.style.left = event.pageX + "px";
-      }
-  }, true);
-
-  sub.addEventListener('mouseup', function(event) {
-    if(event.which == 2)
-    {
-      event.stopPropagation();
-      event.preventDefault();
-      move = false;  
+      }, 500);
     }
   }, true);
 
+  sub.addEventListener('mousemove', function(event) {
+    event.stopPropagation();
+    if (move) {
+      // Calculate pageX/Y for older IE versions
+      let eventDoc = (event.target && event.target.ownerDocument) || document;
+      let doc = eventDoc.documentElement;
+      let body = eventDoc.body;
+      let pageX = event.clientX + (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft || body && body.clientLeft || 0);
+      let pageY = event.clientY + (doc && doc.scrollTop || body && body.scrollTop || 0) - (doc && doc.clientTop || body && body.clientTop || 0);
+
+      sub.style.position = 'absolute'; // Ensure element is positioned
+      sub.style.left = pageX + 'px';
+      sub.style.top = pageY + 'px';
+    }
+  }, true);
+
+  sub.addEventListener('mouseup', function(event) {
+    if (event.which === 2) {
+      isMiddleButtonDown = false;
+      move = false;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    }
+  }, true);
 }
 
 window.onload  = function() {
 
   var sub_container = document.querySelectorAll(".submarine__container");
-	var submarines = document.querySelectorAll(".submarine__body");
+  var submarines = document.querySelectorAll(".submarine__body");
   var propellers = document.querySelectorAll(".submarine__propeller");
   var bubbles = document.querySelectorAll(".bubbles__container");
   var submarine_links = document.querySelectorAll(".submarine__container a")
@@ -181,7 +195,7 @@ window.onload  = function() {
   for(var i = 0; i < submarines.length; i++)
   {
     submarine_links[i].replaceWith(...submarine_links[i].childNodes); 
-    moveSub(sub_container[i], i);	
+    moveSub(sub_container[i], i);   
   }
 
 

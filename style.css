@@ -16,35 +16,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* aici incepe codul propriu-zis, ce e inainte e un reset */
@@ -81,11 +81,11 @@ html *
 :root
 {
     --sub_size: 1;
-    --sub_main: #e30449;
-    --sub_second: #c6003d;
+    --sub_main: #d32349;
+    --sub_second: #c6203d;
     --sub_lshade: #ef689e;
-    --sub_dshade: #a10532;
-    --sub_detail: #e92d77;
+    --sub_dshade: #912532;
+    --sub_detail: #d83a77;
     --sub_posy: 20%;
     --sub_posx: 20%;
     --sub_posz: 4;
@@ -99,9 +99,9 @@ html *
 {
     --sub_main: #302469;
     --sub_second: #30205d;
-    --sub_lshade: #30589e;
-    --sub_dshade: #301542;
     --sub_detail: #304d97;
+    --sub_lshade: #dfd8de;
+    --sub_dshade: #30095d;
     --sub_posy: 70%;
     --sub_posx: 70%;
     --sub_posz: 2;
@@ -289,35 +289,35 @@ body {
 
 @media screen and (min-width: 1360px)
 {
-	.hidden
-	{
-		display: none;
-	}
+    .hidden
+    {
+        display: none;
+    }
 
-	article .post
-	{
-		background: #303030;
-		color: white;
-		border-radius: 10px;
-		margin: auto;
-		width: 60%;
-		margin-top: 10px;
-	}
+    article .post
+    {
+        background: #303030;
+        color: white;
+        border-radius: 10px;
+        margin: auto;
+        width: 60%;
+        margin-top: 10px;
+    }
 
   #last
-	{
-		margin-bottom: 10px;
+    {
+        margin-bottom: 10px;
   }
 
-	div .post
-	{
-		min-height: 20vh;
-	}
-	article .post h2
-	{
-		padding-top: 10px;
-		text-align: center;
-	}
+    div .post
+    {
+        min-height: 20vh;
+    }
+    article .post h2
+    {
+        padding-top: 10px;
+        text-align: center;
+    }
 
     nav button
     {
@@ -343,6 +343,7 @@ body {
       transition: all 0.5s;
       max-width: 0;
     }
+
     .dropdown-content a {
       padding-top: 4px;
       padding-left: 10px;
@@ -352,6 +353,7 @@ body {
       text-decoration: none;
       display: inline-block;
     }
+
     .dropdown:hover .dropdown-content 
     {
       display: inline-flex;
@@ -405,34 +407,34 @@ body {
 
 .seaContainer {
     display:flex;
-	padding: 0;
-	top: 0%;
-	left: 0%;
-	width: 100%;
+    padding: 0;
+    top: 0%;
+    left: 0%;
+    width: 100%;
     min-height: 100%;
-	background: var(--bg-col);
+    background: var(--bg-col);
     overflow-x: hidden; 
 }
 
 .submarine__container {
-    	position: absolute;
-    	top: var(--sub_posx);
-    	left: var(--sub_posy);
-    	width: calc(400px * var(--sub_size));
-    	height: calc(200px * var(--sub_size));
-    	transform: translate(-50%, -50%);
-      z-index: var(--sub_posz);
+    position: absolute;
+    top: var(--sub_posx);
+    left: var(--sub_posy);
+    width: calc(400px * var(--sub_size));
+    height: calc(200px * var(--sub_size));
+    transform: translate(-50%, -50%);
+    z-index: var(--sub_posz);
 }
 
 .submarine__body {
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	width: calc(250px * var(--sub_size));
-    	height: calc(80px * var(--sub_size));
-    	background: var(--sub_main);
-    	border-radius: calc(50px * var(--sub_size));
-    	transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(250px * var(--sub_size));
+    height: calc(80px * var(--sub_size));
+    background: var(--sub_main);
+    border-radius: calc(50px * var(--sub_size));
+    transform: translate(-50%, -50%);
 }
 @media (max-width: 1360px)
 {
@@ -521,425 +523,425 @@ body {
 }
 
 .submarine__propeller {
-    	position: absolute;
-    	left: 80%;
-    	top: 50%;
-    	width: calc(30px * var(--sub_size));
-    	height: calc(50px * var(--sub_size));
-    	transform: translate(0%, -50%);
-    	perspective: 600px;
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    width: calc(30px * var(--sub_size));
+    height: calc(50px * var(--sub_size));
+    transform: translate(0%, -50%);
+    perspective: 600px;
 }
 
 .propeller__perspective {
-    	width: 100%;
-    	height: 100%;
-    	transition: transform 1s;
-    	transform-style: preserve-3d;
-    	animation: rotateInfinite 1s linear infinite;
-    	cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    animation: rotateInfinite 1s linear infinite;
+    cursor: pointer;
 }
 
 .submarine__propeller-parts {
-    	position: absolute;
-   	left: 0%;
-    	width: 100%;
-    	height: 100%;
-    	top: 0%;
-    	perspective: 1000px;
-    	transform-style: preserve-3d;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .darkOne {
-    	top: 0%;
-    	background: #f7ac08;
-    	transform: rotateY(180deg) rotateX(225deg);
+    top: 0%;
+    background: #f7ac08;
+    transform: rotateY(180deg) rotateX(225deg);
 }
 
 .lightOne {
-    	top: 0%;
-    	background: #f7e349;
-    	transform: rotateX(45deg);
+    top: 0%;
+    background: #f7e349;
+    transform: rotateX(45deg);
 }
 
 .submarine__sail {
-    	position: absolute;
-    	top: 40%;
-    	left: 50%;
-    	width: calc(90px * var(--sub_size));
-    	height: calc(50px * var(--sub_size));
-    	transform: translate(-50%, -100%);
-    	background: var(--sub_second);
-    	clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: calc(90px * var(--sub_size));
+    height: calc(50px * var(--sub_size));
+    transform: translate(-50%, -100%);
+    background: var(--sub_second);
+    clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
 }
 
 .submarine__sail-shadow {
-   	position: absolute;
-    	width: 160%;
-    	height: 10%;
-    	background: var(--sub_dshade);
-    	border-radius: 5px;
+    position: absolute;
+    width: 160%;
+    height: 10%;
+    background: var(--sub_dshade);
+    border-radius: 5px;
 }
 
 .dark1 {
-    	left: 0%;
-    	top: 0%;
-    	transform: translate(0%, -33%);
+    left: 0%;
+    top: 0%;
+    transform: translate(0%, -33%);
 }
 
 .dark2 {
-    	left: 0%;
-    	top: 50%;
+    left: 0%;
+    top: 50%;
 }
 
 .light1 {
-    	left: 20%;
-    	top: 20%;
-    	width: 50%;
-    	background: var(--sub_lshade);
+    left: 20%;
+    top: 20%;
+    width: 50%;
+    background: var(--sub_lshade);
     display: flex;
 }
 
 .submarine__window {
-    	width: calc(25px * var(--sub_size));
-    	height: calc(25px * var(--sub_size));
-    	border-radius: 100%;
-    	background-image: linear-gradient(45deg, #c9e5d9, #fff);
-    	border: calc(8px * var(--sub_size)) solid var(--sub_dshade);
-    	z-index: 10;
-    	animation: shadow-change 1s linear infinite;
+    width: calc(25px * var(--sub_size));
+    height: calc(25px * var(--sub_size));
+    border-radius: 100%;
+    background-image: linear-gradient(45deg, #b9d5c9, #eee);
+    border: calc(4px * var(--sub_size)) solid var(--sub_dshade);
+    z-index: 10;
+    /* animation: shadow-change 1s linear infinite;*/
 }
 
 .one,
 .two {
-    	position: absolute;
-    	top: 50%;
-    	transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .one {
-    	left: 40%;
+    left: 40%;
 }
 
 .two {
-    	left: 20%;
+    left: 20%;
 }
 
 .submarine__shadow-dark {
-    	position: absolute;
-    	left: 70%;
-    	top: 50%;
-    	width: calc(70px * var(--sub_size));
-    	height: calc(10px * var(--sub_size));
-    	border-radius: calc(5px * var(--sub_size));
-    	transform: translate(-50%, -50%);
-    	background: var(--sub_dshade);
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    width: calc(70px * var(--sub_size));
+    height: calc(10px * var(--sub_size));
+    border-radius: calc(5px * var(--sub_size));
+    transform: translate(-50%, -50%);
+    background: var(--sub_dshade);
 }
 
 .submarine__shadow-light {
-    	position: absolute;
-    	left: 35%;
-    	top: 13%;
+    position: absolute;
+    left: 35%;
+    top: 13%;
     display: flex;
-    	width: calc(100px * var(--sub_size));
-    	height: calc(6px * var(--sub_size));
-    	border-radius: calc(5px * var(--sub_size));
-    	transform: translate(-50%, -50%);
-    	background: var(--sub_lshade);
+    width: calc(100px * var(--sub_size));
+    height: calc(6px * var(--sub_size));
+    border-radius: calc(5px * var(--sub_size));
+    transform: translate(-50%, -50%);
+    background: var(--sub_lshade);
 }
 
 .submarine__shadow-arcLight {
-    	position: absolute;
-    	top: 65%;
-    	left: 80%;
-    	width: calc(20px * var(--sub_size));
-    	height: calc(20px * var(--sub_size));
-    	border-radius: 50%;
-    	background: var(--sub_lshade);
+    position: absolute;
+    top: 65%;
+    left: 80%;
+    width: calc(20px * var(--sub_size));
+    height: calc(20px * var(--sub_size));
+    border-radius: 50%;
+    background: var(--sub_lshade);
 }
 
 .submarine__periscope {
-    	position: absolute;
-    	top: 0%;
-    	left: 40%;
-    	width: calc(20px * var(--sub_size));
-    	height: calc(50px * var(--sub_size));
-    	border-right: calc(10px * var(--sub_size)) solid var(--sub_detail);
-    	border-top: calc(10px * var(--sub_size)) solid var(--sub_main);
-    	border-left: 0px solid transparent;
-    	border-bottom: 0px solid transparent;
-    	border-top-right-radius: 10px;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    width: calc(20px * var(--sub_size));
+    height: calc(50px * var(--sub_size));
+    border-right: calc(10px * var(--sub_size)) solid var(--sub_detail);
+    border-top: calc(10px * var(--sub_size)) solid var(--sub_main);
+    border-left: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top-right-radius: 10px;
 }
 
 .submarine__periscope-glass {
-    	position: absolute;
-    	left: 40%;
-    	top: 0%;
-    	width: calc(5px * var(--sub_size));
-    	height: calc(15px * var(--sub_size));
-    	background: #f7ac08;
-    	transform: translate(-50%, -15%);
+    position: absolute;
+    left: 40%;
+    top: 0%;
+    width: calc(5px * var(--sub_size));
+    height: calc(15px * var(--sub_size));
+    background: #f7ac08;
+    transform: translate(-50%, -15%);
 }
 
 .light {
-    	position: absolute;
-    	top: 0%;
-    	left: 0%;
-    	width: calc(500px * var(--sub_size));
-    	height: calc(100px * var(--sub_size));
-    	background: linear-gradient(to left, #817E97, var(--bg-col));
-    	clip-path: polygon(0% 0%, 50% 45%, 50% 55%, 0% 100%);
-    	transform: translate(-18%, -45%);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: calc(500px * var(--sub_size));
+    height: calc(100px * var(--sub_size));
+    background: linear-gradient(to left, #817E97, var(--bg-col));
+    clip-path: polygon(0% 0%, 50% 45%, 50% 55%, 0% 100%);
+    transform: translate(-18%, -45%);
 }
 
 .bubbles__container {
-    	position: absolute;
-    	top: 50%;
-    	left: 65%;
-    	width: calc(100px * var(--sub_size));
-    	height: calc(50px * var(--sub_size));
-    	transform: translate(100%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    width: calc(100px * var(--sub_size));
+    height: calc(50px * var(--sub_size));
+    transform: translate(100%, -50%);
 }
 
 .bubbles {
-    	position: absolute;
-    	width: calc(10px * var(--sub_size));
-    	height: calc(10px * var(--sub_size));
-    	border-radius: 100%;
-    	left: 5%;
-    	top: 5%;
-    	background: #fff;
-    	opacity: 0.8;
+    position: absolute;
+    width: calc(10px * var(--sub_size));
+    height: calc(10px * var(--sub_size));
+    border-radius: 100%;
+    left: 5%;
+    top: 5%;
+    background: #fff;
+    opacity: 0.8;
 }
 
 .bubble-1 {
-    	top: 15%;
-    	left: 1%;
-    	opacity: 0;
-    	animation: move-right 1s infinite linear;
-    	animation-delay: 0.25s;
+    top: 15%;
+    left: 1%;
+    opacity: 0;
+    animation: move-right 1s infinite linear;
+    animation-delay: 0.25s;
 }
 
 .bubble-2 {
-    	top: 30%;
-    	left: 1%;
-    	opacity: 0;
-    	animation: move-right 1s infinite linear;
-    	animation-delay: 0.5s;
+    top: 30%;
+    left: 1%;
+    opacity: 0;
+    animation: move-right 1s infinite linear;
+    animation-delay: 0.5s;
 }
 
 .bubble-3 {
-    	top: 45%;
-    	left: 1%;
-    	opacity: 0;
-    	animation: move-right 1s infinite linear;
-    	animation-delay: 0.75s;
+    top: 45%;
+    left: 1%;
+    opacity: 0;
+    animation: move-right 1s infinite linear;
+    animation-delay: 0.75s;
 }
 
 .bubble-4 {
-    	top: 60%;
-    	left: 1%;
-    	opacity: 0;
-    	animation: move-right 1s infinite linear;
-    	animation-delay: 1s;
+    top: 60%;
+    left: 1%;
+    opacity: 0;
+    animation: move-right 1s infinite linear;
+    animation-delay: 1s;
 }
 
 @media (min-width: 1360px)
 {
 .up-1 {
-    	left: 0%;
-    	top: -2px;
-    	animation: moveTheGroundRight 3s infinite linear;
+    left: 0%;
+    top: -2px;
+    animation: moveTheGroundRight 3s infinite linear;
 }
 
 .up-2 {
-    	left: -10%;
-    	top: -4px;
-    	animation: moveTheGroundRight 4s infinite linear;
+    left: -10%;
+    top: -4px;
+    animation: moveTheGroundRight 4s infinite linear;
 }
 
 .up-3 {
-    	left: -20%;
-    	top: -6px;
-    	animation: moveTheGroundRight 5s infinite linear;
+    left: -20%;
+    top: -6px;
+    animation: moveTheGroundRight 5s infinite linear;
 }
 
 .up-4 {
-    	left: -30%;
-    	top: -8px;
-    	animation: moveTheGroundRight 6s infinite linear;
+    left: -30%;
+    top: -8px;
+    animation: moveTheGroundRight 6s infinite linear;
 }
 
 .up-5 {
-    	left: -40%;
-    	top: -10px;
-    	animation: moveTheGroundRight 7s infinite linear;
+    left: -40%;
+    top: -10px;
+    animation: moveTheGroundRight 7s infinite linear;
 }
 
 .up-6 {
-    	left: -50%;
-    	top: -12px;
-    	animation: moveTheGroundRight 8s infinite linear;
+    left: -50%;
+    top: -12px;
+    animation: moveTheGroundRight 8s infinite linear;
 }
 
 .up-7 {
-    	left: -60%;
-    	top: -14px;
-    	animation: moveTheGroundRight 9s infinite linear;
+    left: -60%;
+    top: -14px;
+    animation: moveTheGroundRight 9s infinite linear;
 }
 
 .up-8 {
-    	left: -70%;
-    	top: -16px;
-    	animation: moveTheGroundRight 10s infinite linear;
+    left: -70%;
+    top: -16px;
+    animation: moveTheGroundRight 10s infinite linear;
 }
 
 .up-9 {
-    	left: -80%;
-    	top: -18px;
-    	animation: moveTheGroundRight 11s infinite linear;
+    left: -80%;
+    top: -18px;
+    animation: moveTheGroundRight 11s infinite linear;
 }
 
 .up-10 {
-    	left: -90%;
-    	top: -20px;
-    	animation: moveTheGroundRight 12s infinite linear;
+    left: -90%;
+    top: -20px;
+    animation: moveTheGroundRight 12s infinite linear;
 }
 
 .up-11 {
-    	left: -100%;
-    	top: -22px;
-    	animation: moveTheGroundRight 13s infinite linear;
+    left: -100%;
+    top: -22px;
+    animation: moveTheGroundRight 13s infinite linear;
 }
 
 .up-12 {
-    	left: -110%;
-    	top: -24px;
-    	animation: moveTheGroundRight 14s infinite linear;
+    left: -110%;
+    top: -24px;
+    animation: moveTheGroundRight 14s infinite linear;
 }
 
 .up-13 {
-    	left: -120%;
-    	top: -26px;
-    	animation: moveTheGroundRight 15s infinite linear;
+    left: -120%;
+    top: -26px;
+    animation: moveTheGroundRight 15s infinite linear;
 }
 
 .up-14 {
-    	left: -130%;
-    	top: -28px;
-    	animation: moveTheGroundRight 16s infinite linear;
+    left: -130%;
+    top: -28px;
+    animation: moveTheGroundRight 16s infinite linear;
 }
 
 .up-15 {
-    	left: -140%;
-    	top: -30px;
-    	animation: moveTheGroundRight 17s infinite linear;
+    left: -140%;
+    top: -30px;
+    animation: moveTheGroundRight 17s infinite linear;
 }
 
 .up-16 {
-    	left: -150%;
-    	top: -32px;
-    	animation: moveTheGroundRight 18s infinite linear;
+    left: -150%;
+    top: -32px;
+    animation: moveTheGroundRight 18s infinite linear;
 }
 
 .up-17 {
-    	left: -160%;
-    	top: -34px;
-    	animation: moveTheGroundRight 19s infinite linear;
+    left: -160%;
+    top: -34px;
+    animation: moveTheGroundRight 19s infinite linear;
 }
 
 .up-18 {
-    	left: -170%;
-    	top: -36px;
-    	animation: moveTheGroundRight 20s infinite linear;
+    left: -170%;
+    top: -36px;
+    animation: moveTheGroundRight 20s infinite linear;
 }
 
 .up-19 {
-    	left: -180%;
-    	top: -38px;
-    	animation: moveTheGroundRight 21s infinite linear;
+    left: -180%;
+    top: -38px;
+    animation: moveTheGroundRight 21s infinite linear;
 }
 
 .up-20 {
-    	left: -190%;
-    	top: -40px;
-    	animation: moveTheGroundRight 22s infinite linear;
+    left: -190%;
+    top: -40px;
+    animation: moveTheGroundRight 22s infinite linear;
 }
 }
 @keyframes shadow-change {
-    	0%,
-    	100% {
-        	background-image: linear-gradient(45deg, #c9e5d9 0%, #c9e5d9 20%, #fff 21%, #fff 39%, #c9e5d9 40%, #fff 41%, #fff 59%, #c9e5d9 60%);
-    	}
+    0%,
+    100% {
+        background-image: linear-gradient(45deg, #c9e5d9 0%, #c9e5d9 20%, #fff 21%, #fff 39%, #c9e5d9 40%, #fff 41%, #fff 59%, #c9e5d9 60%);
+        }
 
-    	20% {
-        	background-image: linear-gradient(45deg, #c9e5d9 20%, #c9e5d9 40%, #fff 41%, #fff 59%, #c9e5d9 60%, #fff 61%, #fff 79%, #c9e5d9 80%);
-    	}
+    20% {
+        background-image: linear-gradient(45deg, #c9e5d9 20%, #c9e5d9 40%, #fff 41%, #fff 59%, #c9e5d9 60%, #fff 61%, #fff 79%, #c9e5d9 80%);
+        }
 
-    	40% {
-        	background-image: linear-gradient(45deg, #c9e5d9 40%, #c9e5d9 60%, #fff 61%, #fff 79%, #c9e5d9 80%, #fff 81%, #fff 99%, #c9e5d9 0%);
-    	}
+    40% {
+        background-image: linear-gradient(45deg, #c9e5d9 40%, #c9e5d9 60%, #fff 61%, #fff 79%, #c9e5d9 80%, #fff 81%, #fff 99%, #c9e5d9 0%);
+        }
 
-    	60% {
-        	background-image: linear-gradient(45deg, #c9e5d9 60%, #c9e5d9 80%, #fff 81%, #fff 99%, #c9e5d9 0%, #fff 1%, #fff 19%, #c9e5d9 20%);
-   	 }
+    60% {
+        background-image: linear-gradient(45deg, #c9e5d9 60%, #c9e5d9 80%, #fff 81%, #fff 99%, #c9e5d9 0%, #fff 1%, #fff 19%, #c9e5d9 20%);
+        }
 
-    	80% {
-        	background-image: linear-gradient(45deg, #c9e5d9 80%, #c9e5d9 0%, #fff 1%, #fff 19%, #c9e5d9 20%, #fff 21%, #fff 39%, #c9e5d9 40%);
-    	}
+    80% {
+        background-image: linear-gradient(45deg, #c9e5d9 80%, #c9e5d9 0%, #fff 1%, #fff 19%, #c9e5d9 20%, #fff 21%, #fff 39%, #c9e5d9 40%);
+        }
 }
 
 @keyframes move-right {
-    	0% {
-        	opacity: 0;
-    	}
+    0% {
+        opacity: 0;
+        }
 
-    	10% {
-        	opacity: 0.4;
-        	transform: translate(10%, 10%);
-    	}
+    10% {
+        opacity: 0.4;
+        transform: translate(10%, 10%);
+        }
 
-    	50% {
-        	opacity: 0.2;
-        	transform: translate(450%, 25%);
-    	}
+    50% {
+        opacity: 0.2;
+        transform: translate(450%, 25%);
+        }
 
-    	80% {
-        	opacity: 0;
-        	transform: translateX(555%);
-    	}
+    80% {
+        opacity: 0;
+        transform: translateX(555%);
+        }
 
-    	100% {
-        	opacity: 0;
-        	left: 0%;
-        	top: 0%;
-    	}
+    100% {
+        opacity: 0;
+        left: 0%;
+        top: 0%;
+        }
 }
 
 @keyframes rotateInfinite {
-    	0% {
-        	transform: rotateX(0deg);
-    	}
+    0% {
+        transform: rotateX(0deg);
+        }
 
-    	50% {
-        	transform: rotateX(180deg);
-    	}
+    50% {
+        transform: rotateX(180deg);
+        }
 
-    	100% {
-        	transform: rotateX(360deg);
-    	}
+    100% {
+        transform: rotateX(360deg);
+        }
 }
 
 @keyframes moveTheGroundRight {
-    	90% {
-        	opacity: 1;
-        	left: 100%;
-    	}
+    90% {
+        opacity: 1;
+        left: 100%;
+        }
 
-    	95%,
-    	100% {
-        	left: 1050%;
-        	opacity: 0;
-    	}
+    95%,
+    100% {
+        left: 1050%;
+        opacity: 0;
+        }
 }
 
 .login-box {
