@@ -1,127 +1,3 @@
-// const crypto = require('crypto');
- /*
-function encrypt(text) {
-    var cipher = crypto.createCipheriv('aes256', 'ivebeenworkingattheairportbaritslikeChristmasinasubmarine','yesidonotsleep');
-
-    var crypted = cipher.update(text, 'utf8', 'hex');
-    crypted += cipher.final('hex');
-
-    return crypted;
-}
-
-function decrypt(text)
-{
-    var decipher = crypto.createDecipheriv('aes256', 'ivebeenworkingattheairportbaritslikeChristmasinasubmarine','yesidonotsleep');
-
-    var decrypted = cipher.update(text, 'utf8', 'hex');
-    decrypted += decipher.final('hex');
-
-    return decrypted;
-}
-
-
-
-/*
-function login() {
-    if (document.querySelector('.login-box')) {
-        document.querySelector('.login-box').remove();
-    }
-    else {
-        let loginBox = document.createElement('div');
-        loginBox.className = 'login-box';
-        document.querySelector('body').appendChild(loginBox);
-        loginBox.classList.add('login-box');
-
-        let registerTitle = document.createElement('h2');
-        registerTitle.textContent = 'Register';
-
-        let registerForm = document.createElement('form');
-        registerForm.id = 'register-form';
-
-        let registerUsername = document.createElement('input');
-        registerUsername.type = 'text';
-        registerUsername.id = 'register-username';
-        registerUsername.placeholder = 'Username';
-        registerUsername.required = true;
-
-        let registerPassword = document.createElement('input');
-        registerPassword.type = 'password';
-        registerPassword.id = 'register-password';
-        registerPassword.placeholder = 'Password';
-        registerPassword.required = true;
-
-        let registerButton = document.createElement('button');
-        registerButton.type = 'submit';
-        registerButton.textContent = 'Register';
-
-        registerForm.appendChild(registerUsername);
-        registerForm.appendChild(registerPassword);
-        registerForm.appendChild(registerButton);
-
-        let loginTitle = document.createElement('h2');
-        loginTitle.textContent = 'Login';
-
-        let loginForm = document.createElement('form');
-        loginForm.id = 'login-form';
-
-        let loginUsername = document.createElement('input');
-        loginUsername.type = 'text';
-        loginUsername.id = 'login-username';
-        loginUsername.placeholder = 'Username';
-        loginUsername.required = true;
-
-        let loginPassword = document.createElement('input');
-        loginPassword.type = 'password';
-        loginPassword.id = 'login-password';
-        loginPassword.placeholder = 'Password';
-        loginPassword.required = true;
-
-        let loginButton = document.createElement('button');
-        loginButton.type = 'submit';
-        loginButton.textContent = 'Login';
-
-        loginForm.appendChild(loginUsername);
-        loginForm.appendChild(loginPassword);
-        loginForm.appendChild(loginButton);
-
-        loginBox.appendChild(registerTitle);
-        loginBox.appendChild(registerForm);
-        loginBox.appendChild(loginTitle);
-        loginBox.appendChild(loginForm);
-
-        document.getElementById('register-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const username = document.getElementById('register-username').value;
-            const password = document.getElementById('register-password').value;
-            fetch('/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, encrypt(password) })
-            })
-                .then(response => response.json())
-                .then(data => alert(data.message));
-        });
-
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const username = document.getElementById('login-username').value;
-            const password = document.getElementById('login-password').value;
-            fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, encrypt(password) })
-            })
-                .then(response => response.json())
-                .then(data => alert(data.message));
-        });
-    }
-
-}
-    */
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -209,23 +85,26 @@ window.onload  = function() {
     },false);
 }
 
-// Theme toggle functionality
-const themeToggle = document.getElementById('theme-toggle');
+// Theme switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-    themeToggle.checked = true;
-}
-
-// Theme toggle event listener
-themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-        document.body.classList.add('light-mode');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.body.classList.remove('light-mode');
-        localStorage.setItem('theme', 'dark');
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        themeToggle.checked = true;
     }
+
+    // Add event listener to theme toggle
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 });

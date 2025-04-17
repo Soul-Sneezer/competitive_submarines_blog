@@ -1032,8 +1032,8 @@ body.light-mode {
     --ground1-col: #E0E2E5;
     --ground2-col: #D0D2D5;
     --outline: #4A4AFF;
-    --text-primary: #2A2A2A;
-    --text-secondary: #4A4AFF;
+    --text-primary: #000000;
+    --text-secondary: #000000;
 }
 
 body.light-mode #first_sub {

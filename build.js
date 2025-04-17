@@ -145,20 +145,122 @@ const blogTemplate = `<!DOCTYPE html>
             margin: 1em 0;
         }
         /* Light mode overrides */
+        body.light-mode {
+            background-color: #f8f8f2;
+            color: #000000;
+        }
+        body.light-mode p, 
+        body.light-mode h1, 
+        body.light-mode h2, 
+        body.light-mode h3, 
+        body.light-mode h4, 
+        body.light-mode h5, 
+        body.light-mode h6,
+        body.light-mode li {
+            color: #000000;
+        }
         body.light-mode .katex {
             color: #282a36;
         }
         body.light-mode .katex-display {
             background: #f8f8f2;
+            border: 1px solid #e0e0e0;
         }
         body.light-mode .chart-container {
             background: #f8f8f2;
+            border: 1px solid #e0e0e0;
         }
         body.light-mode pre[class*="language-"] {
             background: #f8f8f2 !important;
+            border: 1px solid #e0e0e0;
         }
         body.light-mode .error {
             background: #f8f8f2;
+            border: 1px solid #ff5555;
+            color: #ff0000;
+        }
+        body.light-mode .token.keyword {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.function {
+            color: #006400 !important;
+        }
+        body.light-mode .token.string {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.comment {
+            color: #505050 !important;
+        }
+        body.light-mode .token.number {
+            color: #000080 !important;
+        }
+        body.light-mode .token.operator {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.punctuation {
+            color: #000000 !important;
+        }
+        body.light-mode .token.boolean {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.variable {
+            color: #000000 !important;
+        }
+        body.light-mode .token.constant {
+            color: #000080 !important;
+        }
+        body.light-mode .token.class-name {
+            color: #006400 !important;
+        }
+        body.light-mode .token.property {
+            color: #000000 !important;
+        }
+        body.light-mode .token.selector {
+            color: #000000 !important;
+        }
+        body.light-mode .token.tag {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.attr-name {
+            color: #000000 !important;
+        }
+        body.light-mode .token.attr-value {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.namespace {
+            color: #000000 !important;
+        }
+        body.light-mode .token.builtin {
+            color: #000080 !important;
+        }
+        body.light-mode .token.regex {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.important {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.atrule {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.rule {
+            color: #000000 !important;
+        }
+        body.light-mode .token.plain-text {
+            color: #000000 !important;
+        }
+        body.light-mode header {
+            background-color: #f8f8f2;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        body.light-mode footer {
+            background-color: #f8f8f2;
+            border-top: 1px solid #e0e0e0;
+        }
+        body.light-mode a {
+            color: #0000ff;
+        }
+        body.light-mode a:hover {
+            color: #000080;
         }
         /* Blog post specific styles */
         header {
@@ -187,6 +289,35 @@ const blogTemplate = `<!DOCTYPE html>
         }
         .switch {
             margin: 0;
+        }
+        /* Override any light colors that might be coming from Prism.js */
+        body.light-mode pre[class*="language-"] * {
+            color: #000000 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.keyword,
+        body.light-mode pre[class*="language-"] .token.operator,
+        body.light-mode pre[class*="language-"] .token.boolean,
+        body.light-mode pre[class*="language-"] .token.tag,
+        body.light-mode pre[class*="language-"] .token.important,
+        body.light-mode pre[class*="language-"] .token.atrule {
+            color: #0000ff !important;
+        }
+        body.light-mode pre[class*="language-"] .token.function,
+        body.light-mode pre[class*="language-"] .token.class-name {
+            color: #006400 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.string,
+        body.light-mode pre[class*="language-"] .token.attr-value,
+        body.light-mode pre[class*="language-"] .token.regex {
+            color: #8b0000 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.number,
+        body.light-mode pre[class*="language-"] .token.constant,
+        body.light-mode pre[class*="language-"] .token.builtin {
+            color: #000080 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.comment {
+            color: #505050 !important;
         }
     </style>
 </head>

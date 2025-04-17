@@ -1,37 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title> Competitive Submarines </title>
-		<link rel="stylesheet" href="post_style.css">
-		<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-		<script type="module" src="https://competitivesubmarines.com/blog1.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Notation and Charts in Blog Posts - Competitive Submarines Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="post_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <style>
+        /* Custom styling for darker background and more vibrant colors */
+        pre[class*="language-"] {
+            background: #1a1a1a !important;
+            border-radius: 4px;
+            margin: 1.5em 0;
+            padding: 1.5em;
+        }
+        .token.keyword {
+            color: #ff79c6 !important;
+        }
+        .token.function {
+            color: #50fa7b !important;
+        }
+        .token.string {
+            color: #f1fa8c !important;
+        }
+        .token.comment {
+            color: #6272a4 !important;
+        }
+        .token.number {
+            color: #bd93f9 !important;
+        }
+        .token.operator {
+            color: #ff79c6 !important;
+        }
+        /* Math styling */
+        .katex {
+            font-size: 1.1em;
+            color: #f8f8f2;
+        }
+        .katex-display {
+            margin: 1em 0;
+            padding: 0.5em;
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        /* Chart styling */
+        .chart-container {
+            margin: 1.5em 0;
+            background: #1a1a1a;
+            border-radius: 4px;
+            padding: 1em;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        /* Error styling */
+        .error {
+            color: #ff5555;
+            background: #1a1a1a;
+            padding: 1em;
+            border-radius: 4px;
+            margin: 1em 0;
+        }
+        /* Light mode overrides */
+        body.light-mode {
+            background-color: #f8f8f2;
+            color: #000000;
+        }
+        body.light-mode p, 
+        body.light-mode h1, 
+        body.light-mode h2, 
+        body.light-mode h3, 
+        body.light-mode h4, 
+        body.light-mode h5, 
+        body.light-mode h6,
+        body.light-mode li {
+            color: #000000;
+        }
+        body.light-mode .katex {
+            color: #282a36;
+        }
+        body.light-mode .katex-display {
+            background: #f8f8f2;
+            border: 1px solid #e0e0e0;
+        }
+        body.light-mode .chart-container {
+            background: #f8f8f2;
+            border: 1px solid #e0e0e0;
+        }
+        body.light-mode pre[class*="language-"] {
+            background: #f8f8f2 !important;
+            border: 1px solid #e0e0e0;
+        }
+        body.light-mode .error {
+            background: #f8f8f2;
+            border: 1px solid #ff5555;
+            color: #ff0000;
+        }
+        body.light-mode .token.keyword {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.function {
+            color: #006400 !important;
+        }
+        body.light-mode .token.string {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.comment {
+            color: #505050 !important;
+        }
+        body.light-mode .token.number {
+            color: #000080 !important;
+        }
+        body.light-mode .token.operator {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.punctuation {
+            color: #000000 !important;
+        }
+        body.light-mode .token.boolean {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.variable {
+            color: #000000 !important;
+        }
+        body.light-mode .token.constant {
+            color: #000080 !important;
+        }
+        body.light-mode .token.class-name {
+            color: #006400 !important;
+        }
+        body.light-mode .token.property {
+            color: #000000 !important;
+        }
+        body.light-mode .token.selector {
+            color: #000000 !important;
+        }
+        body.light-mode .token.tag {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.attr-name {
+            color: #000000 !important;
+        }
+        body.light-mode .token.attr-value {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.namespace {
+            color: #000000 !important;
+        }
+        body.light-mode .token.builtin {
+            color: #000080 !important;
+        }
+        body.light-mode .token.regex {
+            color: #8b0000 !important;
+        }
+        body.light-mode .token.important {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.atrule {
+            color: #0000ff !important;
+        }
+        body.light-mode .token.rule {
+            color: #000000 !important;
+        }
+        body.light-mode .token.plain-text {
+            color: #000000 !important;
+        }
+        body.light-mode header {
+            background-color: #f8f8f2;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        body.light-mode footer {
+            background-color: #f8f8f2;
+            border-top: 1px solid #e0e0e0;
+        }
+        body.light-mode a {
+            color: #0000ff;
+        }
+        body.light-mode a:hover {
+            color: #000080;
+        }
+        /* Blog post specific styles */
+        header {
+            position: relative;
+        }
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        header > div {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        header nav {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-right: 20px;
+        }
+        .switch {
+            margin: 0;
+        }
+        /* Override any light colors that might be coming from Prism.js */
+        body.light-mode pre[class*="language-"] * {
+            color: #000000 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.keyword,
+        body.light-mode pre[class*="language-"] .token.operator,
+        body.light-mode pre[class*="language-"] .token.boolean,
+        body.light-mode pre[class*="language-"] .token.tag,
+        body.light-mode pre[class*="language-"] .token.important,
+        body.light-mode pre[class*="language-"] .token.atrule {
+            color: #0000ff !important;
+        }
+        body.light-mode pre[class*="language-"] .token.function,
+        body.light-mode pre[class*="language-"] .token.class-name {
+            color: #006400 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.string,
+        body.light-mode pre[class*="language-"] .token.attr-value,
+        body.light-mode pre[class*="language-"] .token.regex {
+            color: #8b0000 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.number,
+        body.light-mode pre[class*="language-"] .token.constant,
+        body.light-mode pre[class*="language-"] .token.builtin {
+            color: #000080 !important;
+        }
+        body.light-mode pre[class*="language-"] .token.comment {
+            color: #505050 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Mathematical Notation and Charts in Blog Posts</h1>
+                <div class="post-date">April 17, 2024</div>
+            </div>
+            <nav>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1>Mathematical Notation and Charts in Blog Posts</h1>
+<p>This post demonstrates how to use mathematical notation and charts in our blog posts.</p>
+<h2>Mathematical Notation</h2>
+<h3>Block Math</h3>
+<p>Here&#39;s Einstein&#39;s famous equation:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><p>And here&#39;s the quadratic formula:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2764em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5904em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">±</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9134em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span></span></span><span style="top:-2.8734em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1266em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><h3>Inline Math</h3>
+<p>You can also include math inline with text, like this: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> is one of the most famous equations in physics.</p>
+<h2>Charts and Graphs</h2>
+<h3>Line Chart</h3>
+<p>Here&#39;s a simple line chart showing submarine speed over time:</p>
 
-	</head>
-	<body>
-		<header>
-			<a href="about.html">
-			<img src="./images/marine-specie-submarine-v0-ojpuffmt6kec1.webp" alt="Submarines." id="iconita">
-			</a>
-			<nav>
-				<a href="index.html">Home</a>
-				<div class="dropdown">
-					<button class="dropbtn"><a href="search.html" id="visible">Search</a></button> 
-					<div class="dropdown-content">
-						<a href="graph.html">Graph</a>
-					</div>
-				</div>
-				<a href="search.html" class="hidden">Search</a>
-				<a href="graph.html" class="hidden">Graph</a>
-			</nav>
+      <div class="chart-container" style="position: relative; height:400px; width:100%">
+        <canvas id="chart-9t23lbeow"></canvas>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const ctx = document.getElementById('chart-9t23lbeow').getContext('2d');
+          new Chart(ctx, {"type":"line","data":{"labels":["January","February","March","April","May","June"],"datasets":[{"label":"Submarine Speed (knots)","data":[65,59,80,81,56,55],"borderColor":"rgb(75, 192, 192)","tension":0.1}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}}}});
+        });
+      </script>
+    <h3>Bar Chart</h3>
+<p>Here&#39;s a bar chart showing submarine performance metrics:</p>
 
-		</header>
-		<main>
-			<article>
-			</article>
-		</main>
-		<footer>
-			Copyright © 2024 Competitive Submarines. Rights reserved.
-		</footer>
-	</body>
+      <div class="chart-container" style="position: relative; height:400px; width:100%">
+        <canvas id="chart-8w1zianj0"></canvas>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const ctx = document.getElementById('chart-8w1zianj0').getContext('2d');
+          new Chart(ctx, {"type":"bar","data":{"labels":["Speed","Maneuverability","Stealth","Weapon Systems","Sensors"],"datasets":[{"label":"Performance Metrics","data":[85,70,90,75,80],"backgroundColor":"rgba(75, 192, 192, 0.5)","borderColor":"rgb(75, 192, 192)","borderWidth":1}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}},"scales":{"y":{"beginAtZero":true,"max":100}}}});
+        });
+      </script>
+    <h2>Combining Math and Charts</h2>
+<p>Here&#39;s a mathematical function visualized as a chart:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2 + 2x + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>
+      <div class="chart-container" style="position: relative; height:400px; width:100%">
+        <canvas id="chart-hjmwa9m49"></canvas>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const ctx = document.getElementById('chart-hjmwa9m49').getContext('2d');
+          new Chart(ctx, {"type":"scatter","data":{"datasets":[{"label":"f(x) = x² + 2x + 1","data":[{"x":-5,"y":16},{"x":-4,"y":9},{"x":-3,"y":4},{"x":-2,"y":1},{"x":-1,"y":0},{"x":0,"y":1},{"x":1,"y":4},{"x":2,"y":9},{"x":3,"y":16},{"x":4,"y":25},{"x":5,"y":36}],"showLine":true,"borderColor":"rgb(75, 192, 192)","backgroundColor":"rgba(75, 192, 192, 0.5)"}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}},"scales":{"x":{"type":"linear","position":"bottom"}}}});
+        });
+      </script>
+    
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="back-to-home">← Back to Home</a>
+        </div>
+    </footer>
+</body>
 </html>
