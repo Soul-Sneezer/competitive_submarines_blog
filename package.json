@@ -1,0 +1,14 @@
+{
+  "name": "competitive_submarines_blog",
+  "version": "1.0.0",
+  "description": "A blog about competitive submarines",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "marked": "^9.1.5",
+    "front-matter": "^4.0.2"
+  }
+} 
