@@ -49,10 +49,15 @@ table {
 /**********************************************/
 :root
 {
-    --bg-col: #232435;
-    --ground1-col: #1b1c2d;
-    --ground2-col: #0b0c1d;
-    --outline: #A7A9FF;
+    --bg-col: #1A1B2E;
+    --ground1-col: #14152A;
+    --ground2-col: #0D0E1F;
+    --outline: #A3A7FF;
+    --text-color: #E0E0E0;
+    --max-width: 800px;
+    --side-padding: 2rem;
+    --code-bg: #0D0E1F;
+    --code-border: #2B2D42;
 }
 
 @font-face
@@ -95,16 +100,41 @@ header
     display: flex;
     align-items: center;
     background: var(--ground2-col);
-    padding: 5px;
+    padding: 2rem 0;
     z-index: 100;
     outline: 1px solid var(--outline);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
-h1
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 25%, rgba(163, 167, 255, 0.05) 25%, rgba(163, 167, 255, 0.05) 50%, transparent 50%, transparent 75%, rgba(163, 167, 255, 0.05) 75%);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+header h1
 {
-	font-size: 32px;
-	padding: 10px;
+	font-size: 2.5rem;
+	margin: 0;
 	text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(163, 167, 255, 0.3);
+}
+
+header .date
+{
+	text-align: center;
+	color: var(--text-color);
+	margin-top: 0.5rem;
 }
 
 h6
@@ -137,6 +167,7 @@ main
     display:flex;
     min-height: calc(100vh - 30px);
 	background: var(--bg-col);
+    padding: 2rem 0;
 }
 
 footer
@@ -230,5 +261,120 @@ footer
     {
         display: none;
     }
+}
+
+/* Container for centering content */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
+    box-sizing: border-box;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+    margin: 2rem 0 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 1px solid var(--outline);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--outline);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+/* Lists */
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+/* Code blocks */
+pre {
+    background: var(--ground2-col);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+code {
+    font-family: monospace;
+}
+
+/* Footer */
+footer {
+    background: var(--ground2-col);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--outline);
+}
+
+footer .container {
+    text-align: center;
+}
+
+/* Back to home link */
+.back-to-home {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--outline);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+    background: var(--outline);
+    color: var(--ground2-col);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    :root {
+        --side-padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+.post-date {
+    color: #A3A7FF;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
 }
 
