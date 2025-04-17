@@ -30,6 +30,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+/*
 function moveSub(sub, link) {
     var move = false;
     var isMiddleButtonDown = false;
@@ -77,6 +78,7 @@ function moveSub(sub, link) {
         }
     }, true);
 }
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
     var sub_container = document.querySelectorAll(".submarine__container");
