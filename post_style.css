@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	padding-bottom: 80px;
 }
 ol, ul {
 	list-style: none;
@@ -99,11 +100,10 @@ header
 {
     display: flex;
     align-items: center;
-    background: var(--ground2-col);
+    background: var(--ground1-col);
     padding: 2rem 0;
     z-index: 100;
     outline: 1px solid var(--outline);
-    margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -162,24 +162,27 @@ li
 
 }
 
-main
+body.light-mode main
 {
     display:flex;
     min-height: calc(100vh - 30px);
-	background: var(--bg-col);
+	background: #F0F2F5;
     padding: 2rem 0;
 }
 
 footer
 {
-	min-height:20px;
-    font-family: Sagona Arial;
-    margin-top: auto;
-    font-size: 16px;
-    color: white;
-    background-color: var(--ground2-col);
-    padding: 10px;
-    z-index: 1;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 20px;
+	font-family: Sagona Arial;
+	font-size: 16px;
+	color: white;
+	background-color: var(--ground2-col);
+	padding: 10px;
+	z-index: 1;
 }
 
 @media screen and (min-width: 1360px)
@@ -277,6 +280,8 @@ main {
     flex: 1;
     width: 100%;
     margin: 0 auto;
+    min-height: calc(100vh - 140px);
+    padding-bottom: 80px;
 }
 
 /* Typography */
@@ -331,13 +336,6 @@ code {
 }
 
 /* Footer */
-footer {
-    background: var(--ground2-col);
-    padding: 1rem 0;
-    margin-top: 2rem;
-    border-top: 1px solid var(--outline);
-}
-
 footer .container {
     text-align: center;
 }
