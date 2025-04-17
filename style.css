@@ -462,6 +462,7 @@ body {
     .seaContainer
     {
         flex-direction: column;
+        background: var(--bg_col)
     }
 
    .submarine__container 
