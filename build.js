@@ -88,6 +88,7 @@ const blogTemplate = `<!DOCTYPE html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <style>
         /* Custom styling for darker background and more vibrant colors */
         pre[class*="language-"] {
@@ -143,13 +144,65 @@ const blogTemplate = `<!DOCTYPE html>
             border-radius: 4px;
             margin: 1em 0;
         }
+        /* Light mode overrides */
+        body.light-mode .katex {
+            color: #282a36;
+        }
+        body.light-mode .katex-display {
+            background: #f8f8f2;
+        }
+        body.light-mode .chart-container {
+            background: #f8f8f2;
+        }
+        body.light-mode pre[class*="language-"] {
+            background: #f8f8f2 !important;
+        }
+        body.light-mode .error {
+            background: #f8f8f2;
+        }
+        /* Blog post specific styles */
+        header {
+            position: relative;
+        }
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        header > div {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        header nav {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-right: 20px;
+        }
+        .switch {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>{{title}}</h1>
-            <div class="post-date">{{date}}</div>
+            <div>
+                <h1>{{title}}</h1>
+                <div class="post-date">{{date}}</div>
+            </div>
+            <nav>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </nav>
         </div>
     </header>
     
