@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js?v=1"></script>
     <style>
         /* Custom styling for darker background and more vibrant colors */
         pre[class*="language-"] {
@@ -183,6 +183,9 @@
         body.light-mode footer {
             background-color: #f8f8f2;
             border-top: 1px solid #e0e0e0;
+        }
+        body.light-mode .ground {
+            display: none;
         }
         body.light-mode a {
             color: #0000ff;

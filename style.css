@@ -195,7 +195,7 @@ html *
     --sub_posy: 50%;
     --sub_posx: 40%;
     --sub_posz: 4;
-
+    margin-bottom: 10%;
 }
 
 .friends_sub
@@ -457,88 +457,8 @@ body {
     border-radius: calc(50px * var(--sub_size));
     transform: translate(-50%, -50%);
 }
-@media (max-width: 1360px)
-{
-    .seaContainer
-    {
-        flex-direction: column;
-        background: var(--bg_col)
-    }
 
-   .submarine__container 
-    {
-        position: static;
-        margin-top: 150px;
-        margin-left: 50%;
-    }
-    .dropdown
-    {
-        display: none;
-    }
-
-    .ground__container {
-        position: relative;
-        top:90%;
-        left: 0%;
-        width: 100%;
-        background: var(--ground1-col);
-        margin-top: 10px;
-    }
-
-    .ground1 {
-        position: absolute;
-        top: -30px;
-        height: 30px;
-        width: 100%;
-        background: var(--ground1-col);
-    }
-
-    .ground2 {
-        position: absolute;
-        top: -10px;
-        height: 120px;
-        width: 100%;
-        background: var(--ground2-col);
-    }
-
-    .ground span {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-    }
-
-    .ground1 span {
-        background: var(--ground1-col);
-    }
-
-    .ground2 span {
-        background: var(--ground2-col);
-        width: 80px;
-        height: 80px;
-        border-radius: 100%;
-        transform: translateY(30%);
-    }
-
-    .about_sub
-    {
-        --sub_size: 2;
-        margin-top: 300px;
-        margin-bottom: 0;
-    }
-    
-    #desc
-    {
-        font-size: 12px;
-    }
-    .friends_sub
-    {
-        margin-top: 0;
-    }
-}
-
-.submarine__body p
-{
+.submarine__body p {
     padding: 10%;
     color: white;
     text-align: center;
@@ -685,13 +605,13 @@ body {
     position: absolute;
     top: 0%;
     left: 40%;
-    width: calc(20px * var(--sub_size));
-    height: calc(50px * var(--sub_size));
-    border-right: calc(10px * var(--sub_size)) solid var(--sub_detail);
-    border-top: calc(10px * var(--sub_size)) solid var(--sub_main);
+    width: calc(15px * var(--sub_size));
+    height: calc(40px * var(--sub_size));
+    border-right: calc(8px * var(--sub_size)) solid var(--sub_detail);
+    border-top: calc(8px * var(--sub_size)) solid var(--sub_main);
     border-left: 0px solid transparent;
     border-bottom: 0px solid transparent;
-    border-top-right-radius: 10px;
+    border-top-right-radius: calc(5px * var(--sub_size));
 }
 
 .submarine__periscope-glass {
@@ -1027,13 +947,20 @@ input:checked + .slider:before {
 }
 
 /* Light Mode Colors */
+
+body.light-mode header {
+    outline: 1px solid #333333;
+}
+
 body.light-mode {
     --bg-col: #F0F2F5;
     --ground1-col: #E0E2E5;
-    --ground2-col: #D0D2D5;
+    --ground2-col: #F8F8F2;
     --outline: #4A4AFF;
     --text-primary: #000000;
     --text-secondary: #000000;
+    background-color: #f8f8f2;
+    color: #000000;
 }
 
 body.light-mode #first_sub {
@@ -1084,4 +1011,17 @@ body.light-mode footer {
 
 body.light-mode nav a {
     color: #333;
+}
+
+body.light-mode .ground__container {
+    display: none;
+}
+
+body.light-mode .submarine__container {
+    display: none;
+}
+
+body.light-mode .seaContainer {
+    background: #f8f8f2;
+    min-height: 100vh;
 }
