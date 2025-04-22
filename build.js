@@ -322,6 +322,19 @@ const blogTemplate = `<!DOCTYPE html>
         body.light-mode pre[class*="language-"] .token.comment {
             color: #505050 !important;
         }
+        /* Footer styles */
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+        footer .copyright {
+            margin-right: auto;
+        }
+        footer .back-to-home {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -349,6 +362,7 @@ const blogTemplate = `<!DOCTYPE html>
     <footer>
         <div class="container">
             <a href="index.html" class="back-to-home">← Back to Home</a>
+            <p class="copyright">© 2025 Competitive Submarines Blog. All rights reserved.</p>
         </div>
     </footer>
 </body>

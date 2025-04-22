@@ -250,6 +250,19 @@
         body.light-mode pre[class*="language-"] .token.comment {
             color: #505050 !important;
         }
+        /* Footer styles */
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+        footer .copyright {
+            margin-right: auto;
+        }
+        footer .back-to-home {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -294,11 +307,11 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">‚Ä
 <p>Here&#39;s a simple line chart showing submarine speed over time:</p>
 
       <div class="chart-container" style="position: relative; height:400px; width:100%">
-        <canvas id="chart-h4nxh882z"></canvas>
+        <canvas id="chart-i5btptegt"></canvas>
       </div>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const ctx = document.getElementById('chart-h4nxh882z').getContext('2d');
+          const ctx = document.getElementById('chart-i5btptegt').getContext('2d');
           new Chart(ctx, {"type":"line","data":{"labels":["January","February","March","April","May","June"],"datasets":[{"label":"Submarine Speed (knots)","data":[65,59,80,81,56,55],"borderColor":"rgb(75, 192, 192)","tension":0.1}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}}}});
         });
       </script>
@@ -306,11 +319,11 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">‚Ä
 <p>Here&#39;s a bar chart showing submarine performance metrics:</p>
 
       <div class="chart-container" style="position: relative; height:400px; width:100%">
-        <canvas id="chart-de3sfp2py"></canvas>
+        <canvas id="chart-5yts4sb9y"></canvas>
       </div>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const ctx = document.getElementById('chart-de3sfp2py').getContext('2d');
+          const ctx = document.getElementById('chart-5yts4sb9y').getContext('2d');
           new Chart(ctx, {"type":"bar","data":{"labels":["Speed","Maneuverability","Stealth","Weapon Systems","Sensors"],"datasets":[{"label":"Performance Metrics","data":[85,70,90,75,80],"backgroundColor":"rgba(75, 192, 192, 0.5)","borderColor":"rgb(75, 192, 192)","borderWidth":1}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}},"scales":{"y":{"beginAtZero":true,"max":100}}}});
         });
       </script>
@@ -318,11 +331,11 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">‚Ä
 <p>Here&#39;s a mathematical function visualized as a chart:</p>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2 + 2x + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>
       <div class="chart-container" style="position: relative; height:400px; width:100%">
-        <canvas id="chart-ev91njim9"></canvas>
+        <canvas id="chart-pa4ul7cvp"></canvas>
       </div>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const ctx = document.getElementById('chart-ev91njim9').getContext('2d');
+          const ctx = document.getElementById('chart-pa4ul7cvp').getContext('2d');
           new Chart(ctx, {"type":"scatter","data":{"datasets":[{"label":"f(x) = x¬≤ + 2x + 1","data":[{"x":-5,"y":16},{"x":-4,"y":9},{"x":-3,"y":4},{"x":-2,"y":1},{"x":-1,"y":0},{"x":0,"y":1},{"x":1,"y":4},{"x":2,"y":9},{"x":3,"y":16},{"x":4,"y":25},{"x":5,"y":36}],"showLine":true,"borderColor":"rgb(75, 192, 192)","backgroundColor":"rgba(75, 192, 192, 0.5)"}]},"options":{"responsive":true,"plugins":{"legend":{"position":"top"}},"scales":{"x":{"type":"linear","position":"bottom"}}}});
         });
       </script>
@@ -333,6 +346,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">‚Ä
     <footer>
         <div class="container">
             <a href="index.html" class="back-to-home">‚Üê Back to Home</a>
+            <p class="copyright">¬© 2025 Competitive Submarines Blog. All rights reserved.</p>
         </div>
     </footer>
 </body>

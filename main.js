@@ -36,10 +36,7 @@ function moveSub(sub, link) {
     var isMiddleButtonDown = false;
     var timeoutId = null;
 
-    sub.addEventListener('click', function(event) {
-        window.location.href = "blog" + link + ".html";
-    }, true);
-
+    
     sub.addEventListener('mousedown', function(event) {
         if (event.which === 2) {
             isMiddleButtonDown = true;
@@ -86,7 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var propellers = document.querySelectorAll(".submarine__propeller");
     var bubbles = document.querySelectorAll(".bubbles__container");
     var submarine_links = document.querySelectorAll(".submarine__container a")
-
+   
+    sub.addEventListener('click', function(event) {
+        window.location.href = "blog" + link + ".html";
+    }, true);
+    
     for(var i = 0; i < submarines.length; i++) {
         var rand1 = getRandomInt(60);
         var rand2 = getRandomInt(30);
@@ -98,15 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for(var i = 0; i < submarines.length; i++) {
         submarine_links[i].replaceWith(...submarine_links[i].childNodes); 
-        moveSub(sub_container[i], i);   
     }
-
-    var code = "";
-    window.addEventListener("keydown",function(e) {
-        code = (code+String.fromCharCode(e.keyCode || e.which)).substr(-11);
-        if( code == "ABCDEFGHIJK" && window.innerWidth > 1280) {
-            var login = document.querySelectorAll(".nav-login")[0];
-            login.style.display = "block";
-        }
-    },false);
 });

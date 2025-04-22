@@ -74,15 +74,15 @@ html
 
 header img
 {
-    height: 40px;
+    height: 30px;
     float: left;
 }
 
 nav
 {
     display: flex;
-    padding-left: 1vh;
-    width: 30vh;
+    padding-left: 0.5vh;
+    width: 25vh;
 }
 
 nav a
@@ -90,10 +90,10 @@ nav a
     font-family: Sagona Arial;
     display: inline-flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 header
@@ -101,7 +101,7 @@ header
     display: flex;
     align-items: center;
     background: var(--ground1-col);
-    padding: 2rem 0;
+    padding: 1rem 0;
     z-index: 100;
     outline: 1px solid var(--outline);
     position: relative;
