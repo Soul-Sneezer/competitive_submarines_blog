@@ -1385,7 +1385,7 @@ body.light-mode .biplane__body {
     width: calc(250px * var(--sub_size));
     height: calc(50px * var(--sub_size));
     background: var(--sub_main);
-    clip-path: polygon(0% 0%, 0% 100%, 40% 100%, 100% 70%, 100% 30%, 30% 5%);
+    clip-path: polygon(0% 0%, 0% 100%, 40% 100%, 100% 70%, 100% 30%, 30% 0%);
     border-radius: calc(10px * var(--sub_size));
     transform: translate(-50%, -50%);
 }
@@ -1458,8 +1458,51 @@ body.light-mode .biplane__front {
 }
 
 body.light-mode .submarine__propeller {
-    left: 16.8%;
-    width: 8px;
+    left: 17.5%;
+    width: 5px;
 }
 
-body.light-mode
+body.light-mode .darkOne {
+    top: 0%;
+    background: #2f2d2e;
+    transform: rotateY(180deg) rotateX(225deg);
+}
+
+body.light-mode .lightOne {
+    top: 0%;
+    background: #555555;
+    transform: rotateX(45deg);
+}
+
+body.light-mode .biplane__wheel__connection1 {
+    position: absolute;
+    top: 69%;
+    left: 25.5%;
+    width: calc(5px * var(--sub_size));
+    height: calc(30px * var(--sub_size));
+    background: #dddddd;
+    border-radius: calc(10px * var(--sub_size));
+    transform: translate(-50%, -50%) skewX(20deg);
+}
+
+body.light-mode .biplane__wheel__connection2 {
+    position: absolute;
+    top: 69%;
+    left: 33.5%;
+    width: calc(5px * var(--sub_size));
+    height: calc(30px * var(--sub_size));
+    background: #dddddd;
+    border-radius: calc(10px * var(--sub_size));
+    transform: translate(-50%, -50%) skewX(-30deg);
+}
+
+body.light-mode .biplane__wheel {
+    position: absolute;
+    top: 78%;
+    left: 29%;
+    width: calc(30px * var(--sub_size));
+    height: calc(30px * var(--sub_size));
+    background: #444444;
+    border-radius: calc(15px * var(--sub_size));
+    transform: translate(-50%, -50%);
+}
