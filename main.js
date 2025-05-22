@@ -1,4 +1,6 @@
 // Theme switching functionality
+// Theme management functions
+// Theme management functions
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;

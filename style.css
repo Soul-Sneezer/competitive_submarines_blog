@@ -103,11 +103,11 @@ html *
 
 #second_sub
 {
-    --sub_main: #302469;
-    --sub_second: #30205d;
-    --sub_detail: #304d97;
+    --sub_main: #504489;
+    --sub_second: #50407d;
+    --sub_detail: #506db7;
     --sub_lshade: #dfd8de;
-    --sub_dshade: #30095d;
+    --sub_dshade: #50297d;
     --sub_posy: 70%;
     --sub_posx: 70%;
     --sub_posz: 2;
@@ -115,11 +115,10 @@ html *
 
 #third_sub
 {
-    --sub_main: #f3c449;
-    --sub_second: #f6c03d;
-    --sub_lshade: #dfd8de;
-    --sub_dshade: #c1a532;
-    --sub_detail: #f9cd97;
+    --sub_main: #14B8A6;
+    --sub_lshade: #64E8D6;
+    --sub_dshade: #049886;
+    --sub_detail: #34D8C6;
     --sub_posy: 30%;
     --sub_posx: 50%;
     --sub_posz: 3;
@@ -135,6 +134,17 @@ html *
     --sub_posy: 90%;
     --sub_posx: 30%;
     --sub_posz: 1;
+}
+
+#fifth_sub
+{
+    --sub_main: #14B8A6;
+    --sub_lshade: #44E8D6;
+    --sub_dshade: #049886;
+    --sub_detail: #24C8B6;
+    --sub_posy: 60%;
+    --sub_posx: 40%;
+    --sub_posz: 3;
 }
 
 #fifth_sub
@@ -672,7 +682,7 @@ body.light-mode .preview-window p {
     width: calc(90px * var(--sub_size));
     height: calc(50px * var(--sub_size));
     transform: translate(-50%, -100%);
-    background: var(--sub_second);
+    background: var(--sub_main);
     clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
 }
 
@@ -1105,7 +1115,7 @@ body.light-mode header {
 }
 
 body.light-mode {
-    background-color: #87ceeb;
+    background-color: #7be4f3;
     color: #333;
     --bg-col: #f0f2f5;
     --ground1-col: #e4e6eb;
@@ -1118,47 +1128,42 @@ body.light-mode {
 }
 
 body.light-mode main {
-    background-color: #f0f2f5;
+    background-color: #7be4f3;
 }
 
 body.light-mode #first_sub {
-    --sub_main: #FF6B6B;
-    --sub_second: #FF5252;
-    --sub_lshade: #FF9E9E;
-    --sub_dshade: #D32F2F;
-    --sub_detail: #FF8A8A;
+    --sub_main: #DC2626;
+    --sub_lshade: #DC2626;
+    --sub_dshade: #AC0606;
+    --sub_detail: #FC6656;
 }
 
 body.light-mode #second_sub {
     --sub_main: #4A6BFF;
-    --sub_second: #3A5BFF;
     --sub_detail: #6B8BFF;
     --sub_lshade: #B8C0FF;
     --sub_dshade: #2B3D8F;
 }
 
 body.light-mode #third_sub {
-    --sub_main: #FFD166;
-    --sub_second: #FFC43D;
-    --sub_lshade: #FFE5A3;
-    --sub_dshade: #E6AF2E;
-    --sub_detail: #FFE5A3;
+    --sub_main: #4F46E5;
+    --sub_lshade: #4F46E5;
+    --sub_dshade: #2F26C5;
+    --sub_detail: #8F86F5;
 }
 
 body.light-mode #fourth_sub {
-    --sub_main: #06D6A0;
-    --sub_second: #04A777;
-    --sub_lshade: #B5FFE1;
-    --sub_dshade: #028A5B;
+    --sub_main: #069660;
+    --sub_lshade: #85BFB1;
+    --sub_dshade: #027A4B;
     --sub_detail: #B5FFE1;
 }
 
 body.light-mode #fifth_sub {
-    --sub_main: #FF9E00;
-    --sub_second: #FF8500;
-    --sub_lshade: #FFD6A5;
-    --sub_dshade: #E68A00;
-    --sub_detail: #FFD6A5;
+    --sub_main: #F97316;
+    --sub_lshade: #F97316;
+    --sub_dshade: #C95306;
+    --sub_detail: #F9B396;
 }
 
 body.light-mode header,
@@ -1188,7 +1193,7 @@ body.light-mode .submarine__container {
 body.light-mode .seaContainer {
     /* background: #f0f2f5; */
     min-height: 100vh;
-    background: #87ceeb;
+    background: linear-gradient(0deg, #78e0f1, #7be4f3);
 }
 
 .cloud__container {
@@ -1197,7 +1202,7 @@ body.light-mode .seaContainer {
 
 body.light-mode .cloud__container {
     display: block;
-    background: #87ceeb;
+    background: linear-gradient(0deg, #78e0f1, #7be4f3);
     overflow: hidden;
 }
 
@@ -1361,7 +1366,7 @@ body.light-mode .biplane__tail {
     left: 80%;
     width: calc(50px * var(--sub_size));
     height: calc(50px * var(--sub_size));
-    background: var(--sub_main);
+    background: var(--sub_dshade);
     clip-path: polygon(0% 54%, 0% 100%, 65% 98%, 100% 70%, 100% 30%, 100% 20%, 80% 10%, 30% 20%);
     border-radius: calc(10px * var(--sub_size));
     transform: translate(-50%, -50%);
@@ -1378,6 +1383,17 @@ body.light-mode .biplane__tail2 {
     transform: translate(-50%, -50%) skewY(0deg);
 }
 
+body.light-mode .biplane__tail3 {
+    position: absolute;
+    top: 43%;
+    left: 80%;
+    width: calc(50px * var(--sub_size));
+    height: calc(50px * var(--sub_size));
+    background: var(--sub_main);
+    clip-path: polygon(0% 70%, 0% 100%, 65% 98%, 100% 70%, 100% 70%, 100% 57%, 80% 57%, 30% 57%);
+    border-radius: calc(10px * var(--sub_size));
+    transform: translate(-50%, -50%);
+}
 body.light-mode .biplane__body {
     position: absolute;
     top: 50%;
