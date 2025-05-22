@@ -1200,6 +1200,20 @@ body.light-mode .seaContainer {
     display: none;
 }
 
+.biplane__container::before {
+  content: "";
+  position: absolute;
+  left: 345px; /* Adjust depending on your plane's orientation */
+  top: 45%;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  transform: translateY(-50%);
+  animation: trail-move 1s linear infinite;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
 body.light-mode .cloud__container {
     display: block;
     background: linear-gradient(0deg, #78e0f1, #7be4f3);
