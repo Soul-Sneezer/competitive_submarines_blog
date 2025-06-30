@@ -321,7 +321,7 @@ nav a:hover {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding-top: 100px;
+        padding-top: 0px;
     }
 
     .submarine__container {
@@ -351,12 +351,36 @@ nav a:hover {
     #fifth_sub {
         order: 5;
     }
+
+    .biplane__container {
+        display: block;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 50px 0;
+    }
+
+    .cloud__container {
+        display: none !important;
+    }
+
+    body {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    footer {
+        position: relative !important;
+        top: auto;
+        box-shadow: none;
+    }
 }
 
 main
 {
-    min-height: calc(100vh - 140px);
-    margin-bottom: 60px;
+    /* min-height: calc(100vh - 140px);
+    margin-bottom: 0px; */
 }
 
 footer
@@ -1128,7 +1152,7 @@ body.light-mode {
 }
 
 body.light-mode main {
-    background-color: #b3e0ff;
+    background-color: #eaf6ff;
 }
 
 body.light-mode #first_sub {
@@ -1228,7 +1252,7 @@ body.light-mode .cloud__container {
 .cloud1 {
     position: absolute;
     left: 5%;
-    top: 89%;
+    top: 15%;
     width: 120px;
     height: 60px;
     background: #fff;
@@ -1245,7 +1269,7 @@ body.light-mode .cloud__container {
 .cloud2 {
     position: absolute;
     left: 20%;
-    top: 91%;
+    top: 35%;
     width: 90px;
     height: 50px;
     background: #fff;
@@ -1263,7 +1287,7 @@ body.light-mode .cloud__container {
 .cloud3 {
     position: absolute;
     left: 38%;
-    top: 87%;
+    top: 60%;
     width: 140px;
     height: 70px;
     background: #fff;
@@ -1281,7 +1305,7 @@ body.light-mode .cloud__container {
 .cloud4 {
     position: absolute;
     left: 65%;
-    top: 92%;
+    top: 25%;
     width: 100px;
     height: 55px;
     background: #fff;
@@ -1298,7 +1322,7 @@ body.light-mode .cloud__container {
 .cloud5 {
     position: absolute;
     left: 90%;
-    top: 88%;
+    top: 50%;
     width: 110px;
     height: 65px;
     background: #fff;
@@ -1315,7 +1339,7 @@ body.light-mode .cloud__container {
 .cloud6 {
     position: absolute;
     left: 13%;
-    top: 86%;
+    top: 80%;
     width: 80px;
     height: 40px;
     background: #fff;
@@ -1332,7 +1356,7 @@ body.light-mode .cloud__container {
 .cloud7 {
     position: absolute;
     left: 80%;
-    top: 90%;
+    top: 70%;
     width: 130px;
     height: 60px;
     background: #fff;
@@ -1349,7 +1373,7 @@ body.light-mode .cloud__container {
 .cloud8 {
     position: absolute;
     left: 55%;
-    top: 85%;
+    top: 40%;
     width: 100px;
     height: 50px;
     background: #fff;
@@ -1366,7 +1390,7 @@ body.light-mode .cloud__container {
 .cloud9 {
     position: absolute;
     left: 30%;
-    top: 93%;
+    top: 10%;
     width: 95px;
     height: 45px;
     background: #fff;
@@ -1383,7 +1407,7 @@ body.light-mode .cloud__container {
 .cloud10 {
     position: absolute;
     left: 70%;
-    top: 88%;
+    top: 90%;
     width: 115px;
     height: 60px;
     background: #fff;
