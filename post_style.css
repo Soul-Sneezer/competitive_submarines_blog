@@ -264,6 +264,17 @@ footer
     {
         display: none;
     }
+
+    body {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    footer {
+        position: relative !important;
+        top: auto;
+        box-shadow: none;
+    }
 }
 
 /* Container for centering content */
