@@ -80,6 +80,7 @@ const blogTemplate = `<!DOCTYPE html>
     <link rel="stylesheet" href="post_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
@@ -355,7 +356,9 @@ const blogTemplate = `<!DOCTYPE html>
     
     <main>
         <div class="container">
-            {{content}}
+            <div class="post-card">
+                {{content}}
+            </div>
         </div>
     </main>
 
